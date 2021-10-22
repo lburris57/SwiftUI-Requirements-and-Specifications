@@ -89,7 +89,7 @@ enum Status: String, Identifiable, CaseIterable, Hashable
         return UUID()
     }
 
-    case awaiting = "Awaiting"
+    case awaitingAssignment = "Awaiting Assignment"
     case inProgress = "In Progress"
     case completed = "Completed"
     case deferred = "Deferred"
@@ -101,8 +101,8 @@ extension Status
     {
         switch self
         {
-            case .awaiting:
-                return "Awaiting"
+            case .awaitingAssignment:
+                return "Awaiting Assignment"
             case .inProgress:
                 return "In Progress"
             case .completed:
@@ -155,7 +155,7 @@ struct ContentView: View
     @State private var selectedCategory: Category = .model
     @State private var selectedComplexity: Complexity = .medium
     @State private var selectedPriority: Priority = .medium
-    @State private var selectedStatus: Status = .awaiting
+    @State private var selectedStatus: Status = .awaitingAssignment
     @State private var relatedDocuments = ""
     @State private var unitTestId = ""
     @State private var behavioralTestId = ""
@@ -210,7 +210,7 @@ struct ContentView: View
         selectedCategory = .model
         selectedComplexity = .medium
         selectedPriority = .medium
-        selectedStatus = .awaiting
+        selectedStatus = .awaitingAssignment
         relatedDocuments = ""
         unitTestId = ""
         behavioralTestId = ""
@@ -257,7 +257,7 @@ struct ContentView: View
         {
             try viewContext.save()
             
-            Log.info("Successfully updated requirement \(requirement.requirementId!) - \(requirement.title!)")
+            Log.info("Successfully updated requirement \(requirement.requirementId!) - \(requirement.title!) isCompleted value to \(requirement.isCompleted)")
         }
         catch
         {

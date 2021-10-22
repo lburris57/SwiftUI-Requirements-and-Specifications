@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="21A5543b" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="RequirementSpecification" representedClassName="RequirementSpecification" syncable="YES" codeGenerationType="class">
+        <attribute name="behavioralTestId" optional="YES" attributeType="String"/>
+        <attribute name="category" attributeType="String"/>
+        <attribute name="complexity" attributeType="String"/>
+        <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="descriptionText" attributeType="String"/>
+        <attribute name="isCompleted" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
+        <attribute name="lastUpdated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="priority" attributeType="String"/>
+        <attribute name="relatedDocuments" optional="YES" attributeType="String"/>
+        <attribute name="requirementId" attributeType="String"/>
+        <attribute name="status" attributeType="String"/>
+        <attribute name="title" attributeType="String"/>
+        <attribute name="unitTestId" optional="YES" attributeType="String"/>
+    </entity>
+    <elements>
+        <element name="RequirementSpecification" positionX="-54" positionY="-9" width="128" height="238"/>
+    </elements>
+</model>

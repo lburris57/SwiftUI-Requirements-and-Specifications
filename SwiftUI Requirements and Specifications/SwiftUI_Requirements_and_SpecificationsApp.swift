@@ -16,7 +16,7 @@ struct SwiftUI_Requirements_and_SpecificationsApp: App
         WindowGroup
         {
             //  Inject the viewContext into the ContentView
-            ContentView().environment(\.managedObjectContext, persistentContainer.viewContext)
+            RequirementListView().environment(\.managedObjectContext, persistentContainer.viewContext)
         }
     }
 }

@@ -149,16 +149,17 @@ struct ContentView: View
     //  Get the managedObjectContext from the environment which we saved in the app file
     @Environment(\.managedObjectContext) private var viewContext
     
-    @State private var requirementId = ""
-    @State private var title = ""
-    @State private var description = ""
+    @State private var requirementId = Constants.EMPTY_STRING
+    @State private var title = Constants.EMPTY_STRING
+    @State private var description = Constants.EMPTY_STRING
+    @State private var createdBy = Constants.EMPTY_STRING
     @State private var selectedCategory: Category = .model
     @State private var selectedComplexity: Complexity = .medium
     @State private var selectedPriority: Priority = .medium
     @State private var selectedStatus: Status = .awaitingAssignment
-    @State private var relatedDocuments = ""
-    @State private var unitTestId = ""
-    @State private var behavioralTestId = ""
+    @State private var relatedDocuments = Constants.EMPTY_STRING
+    @State private var unitTestId = Constants.EMPTY_STRING
+    @State private var behavioralTestId = Constants.EMPTY_STRING
     @State private var isCompleted = false
     
     //  This fetch request retrieves all the requirements in the database
@@ -179,6 +180,7 @@ struct ContentView: View
             requirement.requirementId = requirementId
             requirement.title = title
             requirement.descriptionText = description
+            requirement.createdBy = createdBy
             requirement.dateCreated = Date()
             requirement.lastUpdated = Date()
             requirement.status = selectedStatus.rawValue
@@ -204,16 +206,17 @@ struct ContentView: View
     //  Resets all the fields to the default values
     private func clearAllFields()
     {
-        requirementId = ""
-        title = ""
-        description = ""
+        requirementId = Constants.EMPTY_STRING
+        title = Constants.EMPTY_STRING
+        description = Constants.EMPTY_STRING
+        createdBy = Constants.EMPTY_STRING
         selectedCategory = .model
         selectedComplexity = .medium
         selectedPriority = .medium
         selectedStatus = .awaitingAssignment
-        relatedDocuments = ""
-        unitTestId = ""
-        behavioralTestId = ""
+        relatedDocuments = Constants.EMPTY_STRING
+        unitTestId = Constants.EMPTY_STRING
+        behavioralTestId = Constants.EMPTY_STRING
     }
     
     //  Returns the color based on the priority
@@ -237,7 +240,7 @@ struct ContentView: View
     //  Evaluates whether the required fields are populated
     private func evaluateFields() -> Bool
     {
-        if requirementId == "" || title == "" || description == ""
+        if requirementId == Constants.EMPTY_STRING || title == Constants.EMPTY_STRING || description == Constants.EMPTY_STRING
         {
             return false
         }
@@ -299,7 +302,6 @@ struct ContentView: View
         {
             VStack(alignment: .leading)
             {
-
                 VStack(alignment: .leading, spacing: 10)
                 {
                     TextField("Enter requirement id", text: $requirementId)
@@ -312,6 +314,10 @@ struct ContentView: View
                     
                     TextField("Enter description", text: $description)
                         .lineLimit(4)
+                        .textFieldStyle(.roundedBorder)
+                        .padding(.horizontal)
+                    
+                    TextField("Enter user creating requirement", text: $createdBy)
                         .textFieldStyle(.roundedBorder)
                         .padding(.horizontal)
                     
@@ -335,7 +341,7 @@ struct ContentView: View
                         Text("Select Category:")
                             .foregroundColor(Color.secondary)
                         
-                        Picker("", selection: $selectedCategory)
+                        Picker(Constants.EMPTY_STRING, selection: $selectedCategory)
                         {
                             ForEach(Category.allCases)
                             {

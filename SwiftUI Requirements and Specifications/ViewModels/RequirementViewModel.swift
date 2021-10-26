@@ -39,6 +39,11 @@ struct RequirementViewModel
     {
         return requirement.descriptionText ?? Constants.EMPTY_STRING
     }
+    
+    var functionalArea: String
+    {
+        return requirement.functionalArea ?? Constants.EMPTY_STRING
+    }
 
     var category: String
     {

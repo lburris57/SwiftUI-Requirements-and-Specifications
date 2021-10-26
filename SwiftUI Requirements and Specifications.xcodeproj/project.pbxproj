@@ -23,6 +23,12 @@
 		91F325BE2723634300E4FB6B /* RequirementDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F325BD2723634300E4FB6B /* RequirementDetailView.swift */; };
 		91F325C027236B0B00E4FB6B /* RequirementDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F325BF27236B0B00E4FB6B /* RequirementDetailViewModel.swift */; };
 		91F325C227236F0D00E4FB6B /* RequirementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F325C127236F0D00E4FB6B /* RequirementViewModel.swift */; };
+		91F325C42724E3E900E4FB6B /* AddCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F325C32724E3E900E4FB6B /* AddCommentView.swift */; };
+		91F325C62725A5EF00E4FB6B /* AddRequirementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F325C52725A5EF00E4FB6B /* AddRequirementViewModel.swift */; };
+		91F325C82725A63A00E4FB6B /* AddCommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F325C72725A63A00E4FB6B /* AddCommentViewModel.swift */; };
+		91F325CA2725BAB100E4FB6B /* Comment+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F325C92725BAB100E4FB6B /* Comment+Extensions.swift */; };
+		91F325CC2725BDD400E4FB6B /* CommentListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F325CB2725BDD400E4FB6B /* CommentListViewModel.swift */; };
+		91F325CE2725BFEE00E4FB6B /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F325CD2725BFEE00E4FB6B /* CommentViewModel.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -43,6 +49,12 @@
 		91F325BD2723634300E4FB6B /* RequirementDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementDetailView.swift; sourceTree = "<group>"; };
 		91F325BF27236B0B00E4FB6B /* RequirementDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementDetailViewModel.swift; sourceTree = "<group>"; };
 		91F325C127236F0D00E4FB6B /* RequirementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementViewModel.swift; sourceTree = "<group>"; };
+		91F325C32724E3E900E4FB6B /* AddCommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentView.swift; sourceTree = "<group>"; };
+		91F325C52725A5EF00E4FB6B /* AddRequirementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRequirementViewModel.swift; sourceTree = "<group>"; };
+		91F325C72725A63A00E4FB6B /* AddCommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentViewModel.swift; sourceTree = "<group>"; };
+		91F325C92725BAB100E4FB6B /* Comment+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comment+Extensions.swift"; sourceTree = "<group>"; };
+		91F325CB2725BDD400E4FB6B /* CommentListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListViewModel.swift; sourceTree = "<group>"; };
+		91F325CD2725BFEE00E4FB6B /* CommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -113,6 +125,7 @@
 				91F325BB27234A4C00E4FB6B /* AddRequirementView.swift */,
 				91F325B9272349E800E4FB6B /* RequirementListView.swift */,
 				91F325BD2723634300E4FB6B /* RequirementDetailView.swift */,
+				91F325C32724E3E900E4FB6B /* AddCommentView.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -123,6 +136,10 @@
 				91F325B727233F9400E4FB6B /* RequirementListViewModel.swift */,
 				91F325BF27236B0B00E4FB6B /* RequirementDetailViewModel.swift */,
 				91F325C127236F0D00E4FB6B /* RequirementViewModel.swift */,
+				91F325C52725A5EF00E4FB6B /* AddRequirementViewModel.swift */,
+				91F325C72725A63A00E4FB6B /* AddCommentViewModel.swift */,
+				91F325CB2725BDD400E4FB6B /* CommentListViewModel.swift */,
+				91F325CD2725BFEE00E4FB6B /* CommentViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -131,6 +148,7 @@
 			isa = PBXGroup;
 			children = (
 				91F325AE2721E14900E4FB6B /* RequirementSpec.xcdatamodeld */,
+				91F325C92725BAB100E4FB6B /* Comment+Extensions.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -211,14 +229,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				91F325CE2725BFEE00E4FB6B /* CommentViewModel.swift in Sources */,
+				91F325CC2725BDD400E4FB6B /* CommentListViewModel.swift in Sources */,
 				91F325B827233F9400E4FB6B /* RequirementListViewModel.swift in Sources */,
+				91F325CA2725BAB100E4FB6B /* Comment+Extensions.swift in Sources */,
 				91F325BE2723634300E4FB6B /* RequirementDetailView.swift in Sources */,
 				91F325C227236F0D00E4FB6B /* RequirementViewModel.swift in Sources */,
+				91F325C62725A5EF00E4FB6B /* AddRequirementViewModel.swift in Sources */,
 				91F325B22721E94D00E4FB6B /* CoreDataManager.swift in Sources */,
 				91F325B02721E14900E4FB6B /* RequirementSpec.xcdatamodeld in Sources */,
+				91F325C42724E3E900E4FB6B /* AddCommentView.swift in Sources */,
 				91F325C027236B0B00E4FB6B /* RequirementDetailViewModel.swift in Sources */,
 				91F325BC27234A4C00E4FB6B /* AddRequirementView.swift in Sources */,
 				91F325862720A22900E4FB6B /* ContentView.swift in Sources */,
+				91F325C82725A63A00E4FB6B /* AddCommentViewModel.swift in Sources */,
 				91F325BA272349E800E4FB6B /* RequirementListView.swift in Sources */,
 				91F325992720A73600E4FB6B /* Log.swift in Sources */,
 				91F325842720A22900E4FB6B /* SwiftUI_Requirements_and_SpecificationsApp.swift in Sources */,
@@ -361,7 +385,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -391,7 +415,7 @@
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

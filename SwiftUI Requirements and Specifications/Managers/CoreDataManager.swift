@@ -79,6 +79,8 @@ class CoreDataManager
         }
         catch
         {
+            persistentContainer.viewContext.rollback()
+            
             Log.error("Error saving requirement \(requirement.requirementId!) - \(requirement.title!): \(error.localizedDescription)")
         }
     }

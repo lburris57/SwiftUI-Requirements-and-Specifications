@@ -10,6 +10,8 @@ import SwiftUI
 struct RequirementDetailView: View
 {
     @StateObject private var requirementDetailViewModel = RequirementDetailViewModel()
+    
+    @State private var isPresented: Bool = false
 
     var requirementViewModel: RequirementViewModel
 
@@ -22,7 +24,7 @@ struct RequirementDetailView: View
     {
         Form
         {
-            VStack(alignment: .leading, spacing: 5)
+            VStack(alignment: .leading, spacing: 8)
             {
                 Section
                 {
@@ -35,17 +37,17 @@ struct RequirementDetailView: View
                             Text("\(requirementViewModel.requirementId)")
                         }
 
-                        HStack
+                        VStack(alignment: .leading)
                         {
                             Text("Title:").fontWeight(.bold)
-                            Spacer()
+                            //Spacer()
                             Text("\(requirementViewModel.title)")
                         }
 
-                        HStack
+                        VStack(alignment: .leading)
                         {
                             Text("Description: ").fontWeight(.bold)
-                            Spacer()
+                            //Spacer()
                             Text("\(requirementViewModel.description)")
                         }
 
@@ -121,7 +123,7 @@ struct RequirementDetailView: View
                     {
                         HStack
                         {
-                            Text("Created By: ").fontWeight(.bold)
+                            Text("Authored By: ").fontWeight(.bold)
                             Spacer()
                             Text("\(requirementViewModel.createdBy == Constants.EMPTY_STRING ? "Bubba" : requirementViewModel.createdBy)")
                         }
@@ -137,6 +139,21 @@ struct RequirementDetailView: View
 
             }.navigationTitle("Requirement Details")
             .padding(8)
+            .navigationBarItems(trailing: Button("Add Comment")
+            {
+                isPresented = true
+            })
+            .sheet(isPresented: $isPresented, onDismiss:
+            {
+                //requirementListViewModel.retrieveAllRequirements()
+            }, content:
+            {
+                AddCommentView()
+            })
+
+            .onAppear(perform: {
+                //requirementListViewModel.retrieveAllRequirements()
+            })
             .onAppear(perform: retrieveRequirementById)
         }
     }

@@ -1,5 +1,13 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes"?>
 <model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="19206" systemVersion="21A5543b" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Comment" representedClassName="Comment" syncable="YES" codeGenerationType="class">
+        <attribute name="author" attributeType="String"/>
+        <attribute name="commentText" attributeType="String"/>
+        <attribute name="dateCreated" attributeType="Date" defaultDateTimeInterval="656727780" usesScalarValueType="NO"/>
+        <attribute name="lastUpdated" attributeType="Date" defaultDateTimeInterval="656728200" usesScalarValueType="NO"/>
+        <attribute name="title" attributeType="String"/>
+        <relationship name="requirement" optional="YES" maxCount="1" deletionRule="Nullify" destinationEntity="RequirementSpecification" inverseName="comments" inverseEntity="RequirementSpecification"/>
+    </entity>
     <entity name="RequirementSpecification" representedClassName="RequirementSpecification" syncable="YES" codeGenerationType="class">
         <attribute name="behavioralTestId" optional="YES" attributeType="String"/>
         <attribute name="category" attributeType="String"/>
@@ -7,6 +15,7 @@
         <attribute name="createdBy" optional="YES" attributeType="String"/>
         <attribute name="dateCreated" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="descriptionText" attributeType="String"/>
+        <attribute name="functionalArea" attributeType="String" defaultValueString="&quot;&quot;"/>
         <attribute name="isCompleted" attributeType="Boolean" defaultValueString="NO" usesScalarValueType="YES"/>
         <attribute name="lastUpdated" optional="YES" attributeType="Date" usesScalarValueType="NO"/>
         <attribute name="priority" attributeType="String"/>
@@ -15,8 +24,10 @@
         <attribute name="status" attributeType="String"/>
         <attribute name="title" attributeType="String"/>
         <attribute name="unitTestId" optional="YES" attributeType="String"/>
+        <relationship name="comments" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="Comment" inverseName="requirement" inverseEntity="Comment"/>
     </entity>
     <elements>
-        <element name="RequirementSpecification" positionX="-54" positionY="-9" width="128" height="253"/>
+        <element name="RequirementSpecification" positionX="-54" positionY="-9" width="128" height="283"/>
+        <element name="Comment" positionX="-36" positionY="117" width="128" height="119"/>
     </elements>
 </model>

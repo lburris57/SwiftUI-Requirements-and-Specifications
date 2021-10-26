@@ -6,8 +6,8 @@
 //
 import Foundation
 import SwiftUI
-import Network
 
+/*
 enum Category: String, Identifiable, CaseIterable, Hashable
 {
     var id: UUID
@@ -144,6 +144,38 @@ extension Priority
     }
 }
 
+enum CreatedBy: String, Identifiable, CaseIterable, Hashable
+{
+    var id: UUID
+    {
+        return UUID()
+    }
+
+    case admin = "Admin"
+    case businessAnalyst = "Business Analyst"
+    case validationTeam = "Validation Team"
+    case developmentTeam = "Development Team"
+}
+
+extension CreatedBy
+{
+    var title: String
+    {
+        switch self
+        {
+            case .admin:
+                return "Admin"
+            case .businessAnalyst:
+                return "Business Analyst"
+            case .validationTeam:
+                return "Validation Team"
+            case .developmentTeam:
+                return "Development Team"
+        }
+    }
+}
+*/
+
 struct ContentView: View
 {
     //  Get the managedObjectContext from the environment which we saved in the app file
@@ -152,7 +184,7 @@ struct ContentView: View
     @State private var requirementId = Constants.EMPTY_STRING
     @State private var title = Constants.EMPTY_STRING
     @State private var description = Constants.EMPTY_STRING
-    @State private var createdBy = Constants.EMPTY_STRING
+    @State private var selectedCreatedBy: CreatedBy = .businessAnalyst
     @State private var selectedCategory: Category = .model
     @State private var selectedComplexity: Complexity = .medium
     @State private var selectedPriority: Priority = .medium
@@ -180,9 +212,9 @@ struct ContentView: View
             requirement.requirementId = requirementId
             requirement.title = title
             requirement.descriptionText = description
-            requirement.createdBy = createdBy
             requirement.dateCreated = Date()
             requirement.lastUpdated = Date()
+            requirement.createdBy = selectedCreatedBy.rawValue
             requirement.status = selectedStatus.rawValue
             requirement.category = selectedCategory.rawValue
             requirement.complexity = selectedComplexity.rawValue
@@ -209,7 +241,7 @@ struct ContentView: View
         requirementId = Constants.EMPTY_STRING
         title = Constants.EMPTY_STRING
         description = Constants.EMPTY_STRING
-        createdBy = Constants.EMPTY_STRING
+        selectedCreatedBy = .businessAnalyst
         selectedCategory = .model
         selectedComplexity = .medium
         selectedPriority = .medium
@@ -312,18 +344,36 @@ struct ContentView: View
                         .textFieldStyle(.roundedBorder)
                         .padding(.horizontal)
                     
-                    TextField("Enter description", text: $description)
-                        .lineLimit(4)
-                        .textFieldStyle(.roundedBorder)
+                    VStack(alignment: .leading, spacing: 5)
+                    {
+                        Text(" Enter Description:")
+                            .foregroundColor(Color.secondary)
+                            .padding(.horizontal)
+                        
+                        TextEditor(text: $description)
+                        .lineLimit(6)
+                        .border(.secondary, width: 1)
                         .padding(.horizontal)
-                    
-                    TextField("Enter user creating requirement", text: $createdBy)
-                        .textFieldStyle(.roundedBorder)
-                        .padding(.horizontal)
+                    }
                     
                     HStack
                     {
-                        Text("Select Status:")
+                        Text(" Select Created By:")
+                            .foregroundColor(Color.secondary)
+                        
+                        Picker("Created By", selection: $selectedCreatedBy)
+                        {
+                            ForEach(CreatedBy.allCases)
+                            {
+                                createdBy in
+                                Text(createdBy.title).tag(createdBy)
+                            }
+                        }.pickerStyle(.menu)
+                    }.padding(.horizontal)
+                    
+                    HStack
+                    {
+                        Text(" Select Status:")
                             .foregroundColor(Color.secondary)
                         
                         Picker("Status", selection: $selectedStatus)
@@ -338,7 +388,7 @@ struct ContentView: View
 
                     HStack
                     {
-                        Text("Select Category:")
+                        Text(" Select Category:")
                             .foregroundColor(Color.secondary)
                         
                         Picker(Constants.EMPTY_STRING, selection: $selectedCategory)
@@ -355,7 +405,7 @@ struct ContentView: View
                     
                     HStack
                     {
-                        Text("Select Priority:")
+                        Text(" Select Priority:")
                             .foregroundColor(Color.secondary)
                         
                         Picker("Priority", selection: $selectedPriority)
@@ -370,8 +420,7 @@ struct ContentView: View
 
                     VStack(alignment: .leading)
                     {
-                        Text("Select Complexity:")
-                            .foregroundColor(Color.secondary)
+                        Text(" Select Complexity:").foregroundColor(Color.secondary)
                         
                         Picker("Complexity", selection: $selectedComplexity)
                         {
@@ -397,6 +446,8 @@ struct ContentView: View
 //                                    .textFieldStyle(.roundedBorder)
 //                                    .padding(.horizontal)
 
+                        Spacer()
+                        
                         Button("Save Requirement Information")
                         {
                             saveRequirement()
@@ -410,49 +461,11 @@ struct ContentView: View
                         .shadow(color: .black, radius: 2.0, x: 2.0, y: 2.0)
                         .disabled(!evaluateFields())
                         
-                        List
-                        {
-                            ForEach(allRequirements)
-                            {
-                                requirement in
-                                
-                                HStack
-                                {
-                                    Circle()
-                                        .fill(styleForPriority(requirement.priority!))
-                                        .frame(width: 15, height: 15)
-                                    
-                                    Text(requirement.title ?? "No title")
-                                    
-                                    Spacer()
-                                    
-                                    // Displays a green checkmark or a red
-                                    // pen and pencil ellipsis depending on
-                                    // the isCompleted value which is toggled
-                                    // in the updateIsCompleted() function
-                                    requirement.isCompleted ?
-                                    Image(systemName: "checkmark")
-                                        .foregroundColor(.green)
-                                        .onTapGesture
-                                        {
-                                           updateIsCompleted(requirement)
-                                        }
-                                    :
-                                    Image(systemName: "rectangle.and.pencil.and.ellipsis")
-                                        .foregroundColor(.red)
-                                        .onTapGesture
-                                        {
-                                           updateIsCompleted(requirement)
-                                        }
-                                }
-                            }.onDelete(perform: deleteRequirement)
-                        }
-
                         Spacer()
                     }
                         
-                    }.navigationTitle("Add Requirement")
-                    .padding(8)
+                }.navigationTitle("Add Requirement")
+                .padding(8)
             }
         }
     }

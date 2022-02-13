@@ -9,27 +9,18 @@ import CoreData
 
 class RequirementListViewModel: ObservableObject
 {
-    @Published var requirements = [RequirementViewModel]()
-
-    private var coreDataManager = CoreDataManager.shared
+    @Published var requirements = [Requirement]()
 
     func retrieveAllRequirements()
     {
-        let requirements = coreDataManager.retrieveAllRequirements()
-
-        DispatchQueue.main.async
-        {
-            self.requirements = requirements.map(RequirementViewModel.init)
-        }
+        self.requirements = RequirementEntity.all().map(Requirement.init)
     }
 
-    func deleteRequirement(requirementViewModel: RequirementViewModel)
+    func deleteRequirement(_ requirementEntity: RequirementEntity)
     {
-        let requirement = CoreDataManager.shared.getRequirementById(id: requirementViewModel.id)
-
-        if let requirement = requirement
+        if let requirementEntity = RequirementEntity.byId(id: requirementEntity.objectID) as? RequirementEntity
         {
-            CoreDataManager.shared.deleteRequirement(requirement)
+            requirementEntity.delete()
         }
     }
 }

@@ -9,5 +9,11 @@ import CoreData
 
 class AddRequirementViewModel: ObservableObject
 {
-    
+    func saveRequirement(requirement: Requirement)
+    {
+        if let requirementEntity = RequirementEntity.byId(id: requirement.requirementEntity.objectID) as? RequirementEntity
+        {
+            requirementEntity.save()
+        }
+    }
 }

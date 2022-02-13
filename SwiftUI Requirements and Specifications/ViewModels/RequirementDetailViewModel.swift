@@ -9,27 +9,35 @@ import CoreData
 
 class RequirementDetailViewModel: ObservableObject
 {
-    @Published var requirementViewModel: RequirementViewModel?
-
-    private var coreDataManager = CoreDataManager.shared
+    @Published var requirement: Requirement?
+    @Published var comments = [Comment]()
 
     func retrieveRequirementById(_ id: NSManagedObjectID)
     {
-        let requirement = coreDataManager.getRequirementById(id: id)
-
-        DispatchQueue.main.async
+        if let requirementEntity = RequirementEntity.byId(id: id) as? RequirementEntity
         {
-            self.requirementViewModel = requirement.map(RequirementViewModel.init)
+            self.requirement = Requirement(requirementEntity: requirementEntity)
         }
     }
-
-    func saveRequirement(requirementViewModel: RequirementViewModel)
+    
+    func retrieveCommentsByRequirementId(_ id: NSManagedObjectID)
     {
-        let requirement = CoreDataManager.shared.getRequirementById(id: requirementViewModel.id)
+        self.comments = CommentEntity.getCommentsByRequirementId(requirementId: id).map(Comment.init)
+    }
 
-        if let requirement = requirement
+    func deleteRequirement(_ requirementEntity: RequirementEntity)
+    {
+        if let requirementEntity = RequirementEntity.byId(id: requirementEntity.objectID) as? RequirementEntity
         {
-            CoreDataManager.shared.save(requirement)
+            requirementEntity.delete()
+        }
+    }
+    
+    func deleteComment(_ commentEntity: CommentEntity)
+    {
+        if let commentEntity = CommentEntity.byId(id: commentEntity.objectID) as? CommentEntity
+        {
+            commentEntity.delete()
         }
     }
 }

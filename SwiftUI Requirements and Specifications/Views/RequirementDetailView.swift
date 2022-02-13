@@ -13,11 +13,11 @@ struct RequirementDetailView: View
     
     @State private var isPresented: Bool = false
 
-    var requirementViewModel: RequirementViewModel
+    var requirement: Requirement
 
     func retrieveRequirementById()
     {
-        requirementDetailViewModel.retrieveRequirementById(requirementViewModel.id)
+        requirementDetailViewModel.retrieveRequirementById(requirement.id)
     }
 
     var body: some View
@@ -34,35 +34,35 @@ struct RequirementDetailView: View
                         {
                             Text("Requirement Id:").fontWeight(.bold)
                             Spacer()
-                            Text("\(requirementViewModel.requirementId)")
+                            Text("\(requirement.requirementId)")
                         }
 
                         VStack(alignment: .leading)
                         {
                             Text("Title:").fontWeight(.bold)
                             //Spacer()
-                            Text("\(requirementViewModel.title)")
+                            Text("\(requirement.title)")
                         }
 
                         VStack(alignment: .leading)
                         {
                             Text("Description: ").fontWeight(.bold)
                             //Spacer()
-                            Text("\(requirementViewModel.description)")
+                            Text("\(requirement.description)")
                         }
 
                         HStack
                         {
                             Text("Status: ").fontWeight(.bold)
                             Spacer()
-                            Text("\(requirementViewModel.status)")
+                            Text("\(requirement.status)")
                         }
 
                         HStack
                         {
                             Text("Category: ").fontWeight(.bold)
                             Spacer()
-                            Text("\(requirementViewModel.category)")
+                            Text("\(requirement.category)")
                         }
                     }
                 }
@@ -75,43 +75,43 @@ struct RequirementDetailView: View
                         {
                             Text("Priority: ").fontWeight(.bold)
                             Spacer()
-                            Text("\(requirementViewModel.priority)")
+                            Text("\(requirement.priority)")
                         }
 
                         HStack
                         {
                             Text("Complexity: ").fontWeight(.bold)
                             Spacer()
-                            Text("\(requirementViewModel.complexity)")
+                            Text("\(requirement.complexity)")
                         }
 
-                        if(requirementViewModel.relatedDocuments != Constants.EMPTY_STRING)
+                        if(requirement.relatedDocuments != Constants.EMPTY_STRING)
                         {
                             HStack
                             {
                                 Text("Related Documents: ").fontWeight(.bold)
                                 Spacer()
-                                Text("\(requirementViewModel.relatedDocuments)")
+                                Text("\(requirement.relatedDocuments)")
                             }
                         }
 
-                        if(requirementViewModel.unitTestId != Constants.EMPTY_STRING)
+                        if(requirement.unitTestId != Constants.EMPTY_STRING)
                         {
                             HStack
                             {
                                 Text("Unit Test Id: ").fontWeight(.bold)
                                 Spacer()
-                                Text("\(requirementViewModel.unitTestId)")
+                                Text("\(requirement.unitTestId)")
                             }
                         }
 
-                        if(requirementViewModel.behavioralTestId != Constants.EMPTY_STRING)
+                        if(requirement.behavioralTestId != Constants.EMPTY_STRING)
                         {
                             HStack
                             {
                                 Text("Behavioral Test Id: ").fontWeight(.bold)
                                 Spacer()
-                                Text("\(requirementViewModel.behavioralTestId)")
+                                Text("\(requirement.behavioralTestId)")
                             }
                         }
                     }
@@ -125,14 +125,14 @@ struct RequirementDetailView: View
                         {
                             Text("Authored By: ").fontWeight(.bold)
                             Spacer()
-                            Text("\(requirementViewModel.createdBy == Constants.EMPTY_STRING ? "Bubba" : requirementViewModel.createdBy)")
+                            Text("\(requirement.createdBy == Constants.EMPTY_STRING ? "Bubba" : requirement.createdBy)")
                         }
                         
                         HStack
                         {
                             Text("Last Updated: ").fontWeight(.bold)
                             Spacer()
-                            Text("\(requirementViewModel.lastUpdated)")
+                            Text("\(requirement.lastUpdated)")
                         }
                     }
                 }

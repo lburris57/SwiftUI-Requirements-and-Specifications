@@ -7,13 +7,13 @@
 import Foundation
 import CoreData
 
-extension Comment
+extension CommentEntity: BaseModel
 {
-    static func getCommentsByRequirementId(requirementId: NSManagedObjectID) -> [Comment]
+    static func getCommentsByRequirementId(requirementId: NSManagedObjectID) -> [CommentEntity]
     {
-        let request: NSFetchRequest<Comment> = Comment.fetchRequest()
+        let request: NSFetchRequest<CommentEntity> = CommentEntity.fetchRequest()
         request.predicate = NSPredicate(format: "requirement = %@", requirementId)
-        
+
         do
         {
             return try CoreDataManager.shared.persistentContainer.viewContext.fetch(request)
@@ -22,5 +22,10 @@ extension Comment
         {
             return []
         }
+    }
+    
+    static func deleteComment(commentEntity: CommentEntity)
+    {
+        commentEntity.delete()
     }
 }

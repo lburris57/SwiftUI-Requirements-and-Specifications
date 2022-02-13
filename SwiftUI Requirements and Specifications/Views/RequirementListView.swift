@@ -4,7 +4,6 @@
 //
 //  Created by Larry Burris on 10/22/21.
 //
-
 import SwiftUI
 
 struct RequirementListView: View
@@ -22,7 +21,7 @@ struct RequirementListView: View
             let requirement = requirementListViewModel.requirements[index]
 
             // Delete the requirement
-            requirementListViewModel.deleteRequirement(requirementViewModel: requirement)
+            requirementListViewModel.deleteRequirement(requirement.requirementEntity)
 
             // Refresh the requirements list in the view model
             requirementListViewModel.retrieveAllRequirements()
@@ -41,9 +40,9 @@ struct RequirementListView: View
             {
                 requirement in
 
-                NavigationLink(destination: RequirementDetailView(requirementViewModel: requirement))
+                NavigationLink(destination: RequirementDetailView(requirement: Requirement(requirementEntity: requirement.requirementEntity)))
                 {
-                    RequirementCell(requirement: requirement)
+                    RequirementCell(requirement: Requirement(requirementEntity: requirement.requirementEntity))
                 }
             }
             .onDelete(perform: deleteRequirement)
@@ -54,7 +53,7 @@ struct RequirementListView: View
         {
             isPresented = true
         })
-        .sheet(isPresented: $isPresented, onDismiss:
+        .fullScreenCover(isPresented: $isPresented, onDismiss:
         {
             requirementListViewModel.retrieveAllRequirements()
         }, content:
@@ -62,8 +61,8 @@ struct RequirementListView: View
             AddRequirementView()
         })
         .embedInNavigationView()
-
-        .onAppear(perform: {
+        .onAppear(perform:
+        {
             requirementListViewModel.retrieveAllRequirements()
         })
     }
@@ -79,7 +78,7 @@ struct RequirementListView_Previews: PreviewProvider
 
 struct RequirementCell: View
 {
-    let requirement: RequirementViewModel
+    let requirement: Requirement
     
     //  Returns the color based on the priority
     private func styleForPriority(_ value: String) -> Color

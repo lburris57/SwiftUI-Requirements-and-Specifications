@@ -7,7 +7,12 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		91F325842720A22900E4FB6B /* SwiftUI_Requirements_and_SpecificationsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F325832720A22900E4FB6B /* SwiftUI_Requirements_and_SpecificationsApp.swift */; };
+		91AFFC9D27B8937400E36674 /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AFFC9C27B8937400E36674 /* User.swift */; };
+		91AFFC9F27B8A03100E36674 /* Role.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AFFC9E27B8A03100E36674 /* Role.swift */; };
+		91AFFCA127B8A21600E36674 /* UserGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AFFCA027B8A21600E36674 /* UserGroup.swift */; };
+		91AFFCA327B8A30000E36674 /* Defect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AFFCA227B8A30000E36674 /* Defect.swift */; };
+		91AFFCA527B8A71D00E36674 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AFFCA427B8A71D00E36674 /* Test.swift */; };
+		91F325842720A22900E4FB6B /* RequirementsAndSpecificationsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F325832720A22900E4FB6B /* RequirementsAndSpecificationsApp.swift */; };
 		91F325862720A22900E4FB6B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F325852720A22900E4FB6B /* ContentView.swift */; };
 		91F325882720A22B00E4FB6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91F325872720A22B00E4FB6B /* Assets.xcassets */; };
 		91F3258B2720A22B00E4FB6B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91F3258A2720A22B00E4FB6B /* Preview Assets.xcassets */; };
@@ -22,18 +27,25 @@
 		91F325BC27234A4C00E4FB6B /* AddRequirementView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F325BB27234A4C00E4FB6B /* AddRequirementView.swift */; };
 		91F325BE2723634300E4FB6B /* RequirementDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F325BD2723634300E4FB6B /* RequirementDetailView.swift */; };
 		91F325C027236B0B00E4FB6B /* RequirementDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F325BF27236B0B00E4FB6B /* RequirementDetailViewModel.swift */; };
-		91F325C227236F0D00E4FB6B /* RequirementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F325C127236F0D00E4FB6B /* RequirementViewModel.swift */; };
+		91F325C227236F0D00E4FB6B /* Requirement.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F325C127236F0D00E4FB6B /* Requirement.swift */; };
 		91F325C42724E3E900E4FB6B /* AddCommentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F325C32724E3E900E4FB6B /* AddCommentView.swift */; };
 		91F325C62725A5EF00E4FB6B /* AddRequirementViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F325C52725A5EF00E4FB6B /* AddRequirementViewModel.swift */; };
 		91F325C82725A63A00E4FB6B /* AddCommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F325C72725A63A00E4FB6B /* AddCommentViewModel.swift */; };
 		91F325CA2725BAB100E4FB6B /* Comment+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F325C92725BAB100E4FB6B /* Comment+Extensions.swift */; };
 		91F325CC2725BDD400E4FB6B /* CommentListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F325CB2725BDD400E4FB6B /* CommentListViewModel.swift */; };
-		91F325CE2725BFEE00E4FB6B /* CommentViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F325CD2725BFEE00E4FB6B /* CommentViewModel.swift */; };
+		91F325CE2725BFEE00E4FB6B /* Comment.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F325CD2725BFEE00E4FB6B /* Comment.swift */; };
+		91F325D0272860BB00E4FB6B /* BaseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F325CF272860BB00E4FB6B /* BaseModel.swift */; };
+		91F325D2272863E700E4FB6B /* RequirementSpecification+Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F325D1272863E700E4FB6B /* RequirementSpecification+Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		91AFFC9C27B8937400E36674 /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		91AFFC9E27B8A03100E36674 /* Role.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Role.swift; sourceTree = "<group>"; };
+		91AFFCA027B8A21600E36674 /* UserGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGroup.swift; sourceTree = "<group>"; };
+		91AFFCA227B8A30000E36674 /* Defect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defect.swift; sourceTree = "<group>"; };
+		91AFFCA427B8A71D00E36674 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		91F325802720A22900E4FB6B /* SwiftUI Requirements and Specifications.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI Requirements and Specifications.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		91F325832720A22900E4FB6B /* SwiftUI_Requirements_and_SpecificationsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftUI_Requirements_and_SpecificationsApp.swift; sourceTree = "<group>"; };
+		91F325832720A22900E4FB6B /* RequirementsAndSpecificationsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementsAndSpecificationsApp.swift; sourceTree = "<group>"; };
 		91F325852720A22900E4FB6B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		91F325872720A22B00E4FB6B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		91F3258A2720A22B00E4FB6B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -48,13 +60,15 @@
 		91F325BB27234A4C00E4FB6B /* AddRequirementView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRequirementView.swift; sourceTree = "<group>"; };
 		91F325BD2723634300E4FB6B /* RequirementDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementDetailView.swift; sourceTree = "<group>"; };
 		91F325BF27236B0B00E4FB6B /* RequirementDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementDetailViewModel.swift; sourceTree = "<group>"; };
-		91F325C127236F0D00E4FB6B /* RequirementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementViewModel.swift; sourceTree = "<group>"; };
+		91F325C127236F0D00E4FB6B /* Requirement.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Requirement.swift; sourceTree = "<group>"; };
 		91F325C32724E3E900E4FB6B /* AddCommentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentView.swift; sourceTree = "<group>"; };
 		91F325C52725A5EF00E4FB6B /* AddRequirementViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddRequirementViewModel.swift; sourceTree = "<group>"; };
 		91F325C72725A63A00E4FB6B /* AddCommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddCommentViewModel.swift; sourceTree = "<group>"; };
 		91F325C92725BAB100E4FB6B /* Comment+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Comment+Extensions.swift"; sourceTree = "<group>"; };
 		91F325CB2725BDD400E4FB6B /* CommentListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentListViewModel.swift; sourceTree = "<group>"; };
-		91F325CD2725BFEE00E4FB6B /* CommentViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommentViewModel.swift; sourceTree = "<group>"; };
+		91F325CD2725BFEE00E4FB6B /* Comment.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Comment.swift; sourceTree = "<group>"; };
+		91F325CF272860BB00E4FB6B /* BaseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseModel.swift; sourceTree = "<group>"; };
+		91F325D1272863E700E4FB6B /* RequirementSpecification+Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "RequirementSpecification+Extensions.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -68,6 +82,17 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		91AFFC9B27B88ADB00E36674 /* DatabaseModels */ = {
+			isa = PBXGroup;
+			children = (
+				91F325AE2721E14900E4FB6B /* RequirementSpec.xcdatamodeld */,
+				91F325C92725BAB100E4FB6B /* Comment+Extensions.swift */,
+				91F325CF272860BB00E4FB6B /* BaseModel.swift */,
+				91F325D1272863E700E4FB6B /* RequirementSpecification+Extensions.swift */,
+			);
+			path = DatabaseModels;
+			sourceTree = "<group>";
+		};
 		91F325772720A22900E4FB6B = {
 			isa = PBXGroup;
 			children = (
@@ -87,10 +112,11 @@
 		91F325822720A22900E4FB6B /* SwiftUI Requirements and Specifications */ = {
 			isa = PBXGroup;
 			children = (
-				91F325832720A22900E4FB6B /* SwiftUI_Requirements_and_SpecificationsApp.swift */,
+				91F325832720A22900E4FB6B /* RequirementsAndSpecificationsApp.swift */,
 				91F325872720A22B00E4FB6B /* Assets.xcassets */,
 				91F325962720A2F300E4FB6B /* Constants.swift */,
 				91F325982720A73600E4FB6B /* Log.swift */,
+				91AFFC9B27B88ADB00E36674 /* DatabaseModels */,
 				91F325B527233C1700E4FB6B /* Models */,
 				91F325942720A2CE00E4FB6B /* Enums */,
 				91F325B427233BE800E4FB6B /* ViewModels */,
@@ -135,11 +161,9 @@
 			children = (
 				91F325B727233F9400E4FB6B /* RequirementListViewModel.swift */,
 				91F325BF27236B0B00E4FB6B /* RequirementDetailViewModel.swift */,
-				91F325C127236F0D00E4FB6B /* RequirementViewModel.swift */,
 				91F325C52725A5EF00E4FB6B /* AddRequirementViewModel.swift */,
 				91F325C72725A63A00E4FB6B /* AddCommentViewModel.swift */,
 				91F325CB2725BDD400E4FB6B /* CommentListViewModel.swift */,
-				91F325CD2725BFEE00E4FB6B /* CommentViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -147,8 +171,13 @@
 		91F325B527233C1700E4FB6B /* Models */ = {
 			isa = PBXGroup;
 			children = (
-				91F325AE2721E14900E4FB6B /* RequirementSpec.xcdatamodeld */,
-				91F325C92725BAB100E4FB6B /* Comment+Extensions.swift */,
+				91F325C127236F0D00E4FB6B /* Requirement.swift */,
+				91F325CD2725BFEE00E4FB6B /* Comment.swift */,
+				91AFFC9C27B8937400E36674 /* User.swift */,
+				91AFFC9E27B8A03100E36674 /* Role.swift */,
+				91AFFCA027B8A21600E36674 /* UserGroup.swift */,
+				91AFFCA227B8A30000E36674 /* Defect.swift */,
+				91AFFCA427B8A71D00E36674 /* Test.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -229,12 +258,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				91F325CE2725BFEE00E4FB6B /* CommentViewModel.swift in Sources */,
+				91F325CE2725BFEE00E4FB6B /* Comment.swift in Sources */,
+				91AFFC9F27B8A03100E36674 /* Role.swift in Sources */,
+				91AFFCA327B8A30000E36674 /* Defect.swift in Sources */,
 				91F325CC2725BDD400E4FB6B /* CommentListViewModel.swift in Sources */,
 				91F325B827233F9400E4FB6B /* RequirementListViewModel.swift in Sources */,
 				91F325CA2725BAB100E4FB6B /* Comment+Extensions.swift in Sources */,
 				91F325BE2723634300E4FB6B /* RequirementDetailView.swift in Sources */,
-				91F325C227236F0D00E4FB6B /* RequirementViewModel.swift in Sources */,
+				91F325C227236F0D00E4FB6B /* Requirement.swift in Sources */,
 				91F325C62725A5EF00E4FB6B /* AddRequirementViewModel.swift in Sources */,
 				91F325B22721E94D00E4FB6B /* CoreDataManager.swift in Sources */,
 				91F325B02721E14900E4FB6B /* RequirementSpec.xcdatamodeld in Sources */,
@@ -242,11 +273,16 @@
 				91F325C027236B0B00E4FB6B /* RequirementDetailViewModel.swift in Sources */,
 				91F325BC27234A4C00E4FB6B /* AddRequirementView.swift in Sources */,
 				91F325862720A22900E4FB6B /* ContentView.swift in Sources */,
+				91F325D2272863E700E4FB6B /* RequirementSpecification+Extensions.swift in Sources */,
 				91F325C82725A63A00E4FB6B /* AddCommentViewModel.swift in Sources */,
 				91F325BA272349E800E4FB6B /* RequirementListView.swift in Sources */,
 				91F325992720A73600E4FB6B /* Log.swift in Sources */,
-				91F325842720A22900E4FB6B /* SwiftUI_Requirements_and_SpecificationsApp.swift in Sources */,
+				91F325D0272860BB00E4FB6B /* BaseModel.swift in Sources */,
+				91AFFCA127B8A21600E36674 /* UserGroup.swift in Sources */,
+				91F325842720A22900E4FB6B /* RequirementsAndSpecificationsApp.swift in Sources */,
+				91AFFCA527B8A71D00E36674 /* Test.swift in Sources */,
 				91F325972720A2F300E4FB6B /* Constants.swift in Sources */,
+				91AFFC9D27B8937400E36674 /* User.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

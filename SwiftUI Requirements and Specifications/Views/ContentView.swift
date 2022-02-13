@@ -197,9 +197,9 @@ struct ContentView: View
     //  This fetch request retrieves all the requirements in the database
     //  and assigns them to the allRequirements variable which is of type
     //  FetchedResults<RequirementSpecification>
-    @FetchRequest(entity: RequirementSpecification.entity(),
+    @FetchRequest(entity: RequirementEntity.entity(),
                 sortDescriptors: [NSSortDescriptor(key: "priority", ascending: false)])
-                private var allRequirements: FetchedResults<RequirementSpecification>
+                private var allRequirements: FetchedResults<RequirementEntity>
     
     
     //  Creates a new RequirementSpecification object, populates the values and saves to the database
@@ -207,7 +207,7 @@ struct ContentView: View
     {
         do
         {
-            let requirement = RequirementSpecification(context: viewContext)
+            let requirement = RequirementEntity(context: viewContext)
             
             requirement.requirementId = requirementId
             requirement.title = title
@@ -283,20 +283,20 @@ struct ContentView: View
     }
     
     //  Toggles the isCompleted value of the requirement and saves the updated value
-    private func updateIsCompleted(_ requirement: RequirementSpecification)
+    private func updateIsCompleted(_ requirementEntity: RequirementEntity)
     {
-        requirement.isCompleted.toggle()
-        requirement.lastUpdated = Date()
+        requirementEntity.isCompleted.toggle()
+        requirementEntity.lastUpdated = Date()
         
         do
         {
             try viewContext.save()
             
-            Log.info("Successfully updated requirement \(requirement.requirementId!) - \(requirement.title!) isCompleted value to \(requirement.isCompleted)")
+            Log.info("Successfully updated requirement \(requirementEntity.requirementId!) - \(requirementEntity.title!) isCompleted value to \(requirementEntity.isCompleted)")
         }
         catch
         {
-            Log.error("Error updating requirement \(requirement.requirementId!) - \(requirement.title!): \(error.localizedDescription)")
+            Log.error("Error updating requirement \(requirementEntity.requirementId!) - \(requirementEntity.title!): \(error.localizedDescription)")
         }
     }
     

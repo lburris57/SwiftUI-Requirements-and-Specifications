@@ -1,5 +1,5 @@
 //
-//  SwiftUI_Requirements_and_SpecificationsApp.swift
+//  RequirementsAndSpecificationsApp.swift
 //  SwiftUI Requirements and Specifications
 //
 //  Created by Larry Burris on 10/20/21.
@@ -7,7 +7,7 @@
 import SwiftUI
 
 @main
-struct SwiftUI_Requirements_and_SpecificationsApp: App
+struct RequirementsAndSpecificationsApp: App
 {
     var body: some Scene
     {
@@ -15,8 +15,12 @@ struct SwiftUI_Requirements_and_SpecificationsApp: App
         
         WindowGroup
         {
-            //  Inject the viewContext into the ContentView
+            //  Inject the viewContext into the RequirementListView
             RequirementListView().environment(\.managedObjectContext, persistentContainer.viewContext)
+            .onAppear
+            {
+                UserDefaults.standard.setValue(false, forKey: "_UIConstraintBasedLayoutLogUnsatisfiable")
+            }
         }
     }
 }

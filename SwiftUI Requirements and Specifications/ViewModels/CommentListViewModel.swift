@@ -11,11 +11,10 @@ class CommentListViewModel: ObservableObject
 {
     @Published var comments = [Comment]()
     
-    func getCommentsByRequirement(vm: RequirementViewModel)
+    private var coreDataManager = CoreDataManager.shared
+    
+    func getCommentsByRequirementId(_ id: NSManagedObjectID)
     {
-//        DispatchQueue.main.async
-//        {
-            //self.comments = Comment.getCommentsByRequirementId(requirementId: vm.id).map(CommentViewModel.init)
-//        }
+        self.comments = CommentEntity.getCommentsByRequirementId(requirementId: id).map(Comment.init)
     }
 }

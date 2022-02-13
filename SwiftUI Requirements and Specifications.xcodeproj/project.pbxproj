@@ -12,6 +12,7 @@
 		91AFFCA127B8A21600E36674 /* UserGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AFFCA027B8A21600E36674 /* UserGroup.swift */; };
 		91AFFCA327B8A30000E36674 /* Defect.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AFFCA227B8A30000E36674 /* Defect.swift */; };
 		91AFFCA527B8A71D00E36674 /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AFFCA427B8A71D00E36674 /* Test.swift */; };
+		91AFFCA727B8E8CB00E36674 /* PDFUtils.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91AFFCA627B8E8CB00E36674 /* PDFUtils.swift */; };
 		91F325842720A22900E4FB6B /* RequirementsAndSpecificationsApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F325832720A22900E4FB6B /* RequirementsAndSpecificationsApp.swift */; };
 		91F325862720A22900E4FB6B /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91F325852720A22900E4FB6B /* ContentView.swift */; };
 		91F325882720A22B00E4FB6B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 91F325872720A22B00E4FB6B /* Assets.xcassets */; };
@@ -44,6 +45,7 @@
 		91AFFCA027B8A21600E36674 /* UserGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserGroup.swift; sourceTree = "<group>"; };
 		91AFFCA227B8A30000E36674 /* Defect.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Defect.swift; sourceTree = "<group>"; };
 		91AFFCA427B8A71D00E36674 /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
+		91AFFCA627B8E8CB00E36674 /* PDFUtils.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PDFUtils.swift; sourceTree = "<group>"; };
 		91F325802720A22900E4FB6B /* SwiftUI Requirements and Specifications.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "SwiftUI Requirements and Specifications.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		91F325832720A22900E4FB6B /* RequirementsAndSpecificationsApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RequirementsAndSpecificationsApp.swift; sourceTree = "<group>"; };
 		91F325852720A22900E4FB6B /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -93,6 +95,14 @@
 			path = DatabaseModels;
 			sourceTree = "<group>";
 		};
+		91AFFCA827B8E8D300E36674 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				91AFFCA627B8E8CB00E36674 /* PDFUtils.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		91F325772720A22900E4FB6B = {
 			isa = PBXGroup;
 			children = (
@@ -113,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				91F325832720A22900E4FB6B /* RequirementsAndSpecificationsApp.swift */,
+				91AFFCA827B8E8D300E36674 /* Utils */,
 				91F325872720A22B00E4FB6B /* Assets.xcassets */,
 				91F325962720A2F300E4FB6B /* Constants.swift */,
 				91F325982720A73600E4FB6B /* Log.swift */,
@@ -270,6 +281,7 @@
 				91F325B22721E94D00E4FB6B /* CoreDataManager.swift in Sources */,
 				91F325B02721E14900E4FB6B /* RequirementSpec.xcdatamodeld in Sources */,
 				91F325C42724E3E900E4FB6B /* AddCommentView.swift in Sources */,
+				91AFFCA727B8E8CB00E36674 /* PDFUtils.swift in Sources */,
 				91F325C027236B0B00E4FB6B /* RequirementDetailViewModel.swift in Sources */,
 				91F325BC27234A4C00E4FB6B /* AddRequirementView.swift in Sources */,
 				91F325862720A22900E4FB6B /* ContentView.swift in Sources */,
